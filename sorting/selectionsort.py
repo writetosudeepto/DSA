@@ -1,12 +1,11 @@
 def selection_sort(arr):
-    for i in range(1,len(arr)):
+    for i in range(len(arr)):
         min_index = i
-        j = i-1
-        while j>=0:
-            if arr[min_index] < arr[j]:
-                arr[min_index], arr[j] = arr[j], arr[min_index]
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[min_index]:
                 min_index = j
-            j -= 1
+        if i != min_index:        # saves a swap if i and min_index are the same
+            arr[i], arr[min_index] = arr[min_index], arr[i]
     return arr
 
-print(selection_sort([9,5,7,1,3,2,4,6,8]))
+print(selection_sort([5,4,6,3,2,3,2,1]))
