@@ -20,6 +20,5 @@ def merge_sort(ar):
    
     return merge
 
-print(merge_sort([5,4,6,3,2,3,2,1]))
 
 
