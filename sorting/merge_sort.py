@@ -11,15 +11,15 @@ def merge_sort(ar):
             merge.append(left[i])
             i+=1
         else:
-            ar[i+j] = right[j]
             merge.append(right[j])
             j+=1
-    while(i<len(left)):   # while left array has elements
-        merge.append(left[i])
-        i+=1
-    while(j<len(right)):  # while right array has elements
-        merge.append(right[j])
-        j+=1
+    if i<len(left):
+        merge.extend(left[i:])
+    if j<len(right):
+        merge.extend(right[j:])
+   
     return merge
+
+print(merge_sort([5,4,6,3,2,3,2,1]))
 
 
