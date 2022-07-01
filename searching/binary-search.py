@@ -1,6 +1,6 @@
 def binary_search(lst,el) -> int:
-    start = lst[0]
-    end = lst[-1]
+    start = 0
+    end = len(lst) - 1
     while start <= end:
         mid = (start + end) // 2
         if lst[mid] == el:
@@ -10,3 +10,5 @@ def binary_search(lst,el) -> int:
         else:
             start = mid + 1
     return -1
+
+print(binary_search([1,2,3,4,5,6,7,8,9,10],10))
